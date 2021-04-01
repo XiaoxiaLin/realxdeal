@@ -12,8 +12,8 @@ I decided to build a custom Docker image based on MySQL to:
 
 ### Requirments
 
-    Docker >= 20.10.2
-    An internet connection
+- Docker >= 20.10.2
+- An internet connection
 
 ### Instructions
 
@@ -70,14 +70,14 @@ There are different endpoints for `single prediction` and `batch predictions`:
 
 **Single Predictions:**
 
-- `single_prediction`: when you enter a number in the form to get prediction.
-- `predict`: when you ask for a prediction directly on the url, for example 
+- `single_prediction`: enter a number in the form to get prediction.
+- `predict`: ask for a prediction directly on the url, for example 
 'http://0.0.0.0:5000/predict?x=2' will return the prediction in json format.
 
     
 **Batch Predictions:** 
 
-- `batch_prediction`: when you upload a csv file and get prediction for all the values. 
+- `batch_prediction`: upload a csv file and get prediction for all the values. 
 
 
 ### Deploying ML model
