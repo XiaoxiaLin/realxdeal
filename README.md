@@ -61,7 +61,7 @@ docker pull xiaoxia908/my_app_image
 docker run -d --name myappcontainer  -p 5000:5000 -d xiaoxia908/my_app_image
 ```
 
-Now navegate to http://0.0.0.0:5000/ to get your predictions!
+Now navigate to http://0.0.0.0:5000/ to get your predictions!
 
 If you are interested to check the underlying code and folder structures, run the following command:
 
@@ -71,4 +71,4 @@ docker exec -it myappcontainer bash
 
 ### Note 
 
-The uploaded files and the logs are not persisted on Heroku, because this app is using [free dynos](https://devcenter.heroku.com/articles/dynos#ephemeral-filesystem). In the real scenario, any files that require permanence should be written to S3, or a similar durable store. 
+The uploaded files and the logs are not persisted on Heroku, because this app is using [free dynos](https://devcenter.heroku.com/articles/dynos#ephemeral-filesystem). In the real scenario, any files that require permanence should be written to S3, or a persistent store. 
