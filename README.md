@@ -25,8 +25,8 @@ docker pull xiaoxia908/my_image
 docker run -d --name mysqlcontainer -v /PATH/TO/DIR/CONTAINING/postings_february.csv:/var/lib/mysql-files/ -e MYSQL_ROOT_PASSWORD=password xiaoxia908/my_image
 ```
 
-Another option is to build the docker image from `Dockerfile` in the repository, and run the container:
-(I've named the image 'realxdeal-image')
+Another option is to build the docker image from `Dockerfile` in the repository, and run the container.
+(I've named the image 'realxdeal-image' in the command below):
 
 ```
 docker build -t realxdeal-image .
@@ -41,7 +41,7 @@ Once the container has run, csv result tables for each question will be generate
 
 ### Serving the model
 
-I decided to build Flask API to serve the univariate regression model, using a custom docker image built based on python:3.6-buster.  
+I decided to build Flask API to serve the univariate regression model, using a custom docker image based on python:3.6-buster.  
 
 ### Instructions to run in local
 
@@ -49,21 +49,24 @@ To run the solution in local, one option is to pull my [custom Docker image on D
 
 ```
 docker pull xiaoxia908/serving_ml_model
+
 docker run -d --name myappcontainer  -p 5000:5000 -d xiaoxia908/serving_ml_model
 ```
 
 Another option is to build the docker image from `Dockerfile` in the repository, and run the container:
-(I've named the image 'serving_ml_model')
+(I've named the image 'serving_ml_model' in the command below)
 
 ```
 docker build -t serving_ml_model .
+
 docker run -d --name myappcontainer  -p 5000:5000 -d serving_ml_model
 ```
 
 Now navigate to http://0.0.0.0:5000/ to get your predictions!
 
+### Endpoints
 
-There are different **endpoints** for `single prediction` and `batch predictions`:
+There are different endpoints for `single prediction` and `batch predictions`:
 
 **Single Predictions:**
 
@@ -77,7 +80,7 @@ There are different **endpoints** for `single prediction` and `batch predictions
 - `batch_prediction`: when you upload a csv file and get prediction for all the values. 
 
 
-### deploying ML model in production
+### Deploying ML model
 
 The application is dockerized and deployed onto Heroku:  https://realxdeal.herokuapp.com/
 
@@ -86,6 +89,6 @@ The application is dockerized and deployed onto Heroku:  https://realxdeal.herok
 The uploaded files and the logs are not persisted on Heroku, because this app is using [free dynos](https://devcenter.heroku.com/articles/dynos#ephemeral-filesystem). In the real scenario, any files that require permanence should be written to S3, or any persistent storage. 
 
 
-## Rationale
+# Rationale
 
 I decided to use Docker for the tasks becuase I wanted the solution to be portable, easy to deliver, and simple for other users to run locally on their own machines without needing to install dependencies or deploy infrastructure.
