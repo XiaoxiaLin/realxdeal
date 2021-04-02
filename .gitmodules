@@ -1,0 +1,3 @@
+[submodule "Task2"]
+	path = Task2
+	url = git@github.com:XiaoxiaLin/realxdeal-app.git
