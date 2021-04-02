@@ -89,6 +89,12 @@ The application is dockerized and deployed onto Heroku:  https://realxdeal.herok
 The uploaded files and the logs are not persisted on Heroku, because this app is using [free dynos](https://devcenter.heroku.com/articles/dynos#ephemeral-filesystem). In the real scenario, any files that require permanence should be written to S3, or any persistent storage. 
 
 
+# Task3: Productionization
+
+Please see the jupyter notebook in Task3 folder.
+
+
 # Rationale
 
 I decided to use Docker for the tasks becuase I wanted the solution to be portable, easy to deliver, and simple for other users to run locally on their own machines without needing to install dependencies or deploy infrastructure.
+
